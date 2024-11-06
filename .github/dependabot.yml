@@ -1,18 +1,6 @@
 version: 2
 updates:
-  - package-ecosystem: "composer"
-    directory: "/"
-    schedule:
-      interval: "daily"
-
-  - package-ecosystem: "npm"
-    # Files stored in `app` directory
-    directory: "/"
-    schedule:
-      interval: "daily"
-
   - package-ecosystem: "github-actions"
-    # Workflow files stored in the default location of `.github/workflows`. (You don't need to specify `/.github/workflows` for `directory`. You can use `directory: "/"`.)
-    directory: "/"
+    directory: "/.github/workflows"
     schedule:
       interval: "daily"
