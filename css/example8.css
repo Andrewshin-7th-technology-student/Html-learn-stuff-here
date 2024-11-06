@@ -1,0 +1,11 @@
+nav {
+    background-color: #333; /* Set background color */
+    overflow: hidden; /* Clear floats */
+}
+
+nav a {
+    float: left; /* Align links to the left */
+    display: block; /* Make links block-level */
+    color: white; /* Set text color */
+    text-align: center; /* Center text */
+    padding: 14px 16px;
