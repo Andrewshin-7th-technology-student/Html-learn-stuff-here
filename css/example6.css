@@ -1,0 +1,15 @@
+.container {
+    display: flex;            /* Enable flexbox layout */
+    flex-direction: row;     /* Default to row layout */
+}
+
+.item {
+    flex: 1;                 /* Allow items to grow equally */
+    padding: 20px;          /* Add padding */
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column; /* Change to column layout on small screens */
+    }
+}
