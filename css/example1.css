@@ -1,0 +1,11 @@
+h1 {
+    color: darkblue;          /* Set text color */
+    font-size: 36px;         /* Set font size */
+    font-weight: bold;       /* Make text bold */
+}
+
+p {
+    color: gray;             /* Set paragraph text color */
+    font-size: 16px;         /* Set font size */
+    line-height: 1.5;        /* Set line height for better readability */
+}
