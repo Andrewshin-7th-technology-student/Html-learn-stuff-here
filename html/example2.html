@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple number guessing game">
+    <title>Guess the Number Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaeaea;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #35424a;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4a5a6a;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background: #35424a;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Guess the Number Game</h1>
+    </header>
+
+    <section>
+        <h2>Instructions</h2>
+        <p>Guess a number between 1 and 100. You have 10 attempts!</p>
+        <input type="number" id="guessInput" min="1" max="100" placeholder="Enter your guess">
+        <button onclick="checkGuess()">Submit Guess</button>
+        <p id="result"></p>
+        <p id="attempts"></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 My Game. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 10;
+
+        function checkGuess() {
+            const guessInput = document.getElementById('guessInput');
+            const resultDisplay = document.getElementById('result');
+            const attemptsDisplay = document.getElementById('attempts');
+            const userGuess = Number(guessInput.value);
+
+            if (userGuess < 1 || userGuess > 100) {
+                resultDisplay.textContent = "Please enter a number between 1 and 100.";
+                return;
+            }
+
+            attempts--;
+
+            if (userGuess === randomNumber) {
+                resultDisplay.textContent = "Congratulations! You guessed the number!";
+                attemptsDisplay.textContent = "";
+            } else if (attempts === 0) {
+                resultDisplay.textContent = "Game Over! The number was " + randomNumber + ".";
+                attemptsDisplay.textContent = "";
+            } else {
+                let hint = userGuess < randomNumber ? "higher" : "lower";
+                resultDisplay.textContent = "Wrong guess! Try a " + hint + " number.";
+                attemptsDisplay.textContent = "Attempts remaining: " + attempts;
+            }
+
+            guessInput.value = '';
+            guessInput.focus();
+        }
+    </script>
+</body>
+
+</html>
