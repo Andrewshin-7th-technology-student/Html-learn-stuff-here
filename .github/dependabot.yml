@@ -1,31 +1,18 @@
 version: 2
 updates:
-  - package-ecosystem: "github-actions"
+  - package-ecosystem: "composer"
     directory: "/"
     schedule:
       interval: "daily"
-      
-  - package-ecosystem: nuget
-  directory: "/"
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 1000
-  groups:
-    AWSSDK:
-      patterns:
-        - "AWSSDK.*"
-    NServiceBusCore:
-      patterns:
-        - "NServiceBus"
-        - "NServiceBus.AcceptanceTesting"
-        - "NServiceBus.AcceptanceTests.Sources"
-        - "NServiceBus.PersistenceTests.Sources"
-        - "NServiceBus.TransportTests.Sources"
-  ignore:
-    # Particular.Analyzers updates are distributed via RepoStandards
-    - dependency-name: "Particular.Analyzers"
-    # Changing these 3 dependencies affects the .NET SDK and Visual Studio versions we support 
-    # These types of updates should be more intentional than an automated update
-    - dependency-name: "Microsoft.Build.Utilities.Core"
-    - dependency-name: "Microsoft.CodeAnalysis.CSharp"
-    - dependency-name: "Microsoft.CodeAnalysis.CSharp.Workspaces"
+
+  - package-ecosystem: "npm"
+    # Files stored in `app` directory
+    directory: "/"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "github-actions"
+    # Workflow files stored in the default location of `.github/workflows`. (You don't need to specify `/.github/workflows` for `directory`. You can use `directory: "/"`.)
+    directory: "/"
+    schedule:
+      interval: "daily"
