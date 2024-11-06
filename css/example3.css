@@ -1,0 +1,13 @@
+.flex-container {
+    display: flex;           /* Enable flexbox layout */
+    justify-content: center; /* Center items horizontally */
+    align-items: center;     /* Center items vertically */
+    height: 200px;          /* Set height of the container */
+    background-color: #eaeaea; /* Set background color */
+}
+
+.flex-item {
+    margin: 10px;           /* Add margin around each item */
+    padding: 20px;          /* Add padding inside each item */
+    background-color: lightcoral; /* Set background color for items */
+}
