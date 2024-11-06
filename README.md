@@ -1,3 +1,3 @@
 Learn code here! ~ ~ ~ WORK IN PROGRESS
 
-<img src="img/ok.gif" alt="">
+<img src="./img/ok.gif" alt="">
