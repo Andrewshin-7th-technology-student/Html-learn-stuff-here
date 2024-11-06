@@ -1,0 +1,14 @@
+/* Hover effects */
+.button {
+    background-color: #007BFF; /* Set button background color */
+    color: white;              /* Set text color */
+    padding: 10px 20px;       /* Add padding */
+    border: none;             /* Remove border */
+    border-radius: 5px;       /* Round corners */
+    cursor: pointer;           /* Change cursor to pointer */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
